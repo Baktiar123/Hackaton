@@ -140,6 +140,26 @@
 	</div>
 
 	<div class="container">
+	<br><br><h1>Waspada Terhadap Hoax<br></h1><br>
+	<h5>&nbsp; Berikut ini adalah berita / artikel hoax<br></h5>
+		<div class="row" style="margin-top: 20px; margin-left: 2px; ">
+			
+				<table class="table">
+				<tbody>
+                 <?php foreach ($news as $berita) : ?>
+	                <tr>
+	                  <td></td>
+	                  <td><?= $berita->title; ?></td><br>
+	                  <td><?= $berita->url; ?></td><br><br>
+	                </tr>
+                 <?php endforeach; ?>
+                </tbody>
+            </table>
+			
+		</div>
+	</div>
+
+	<div class="container">
 	<br><br><h1>Lapor Sigap Covid 19<br></h1>
 		<div class="row" style="margin-top: 20px; margin-left: 2px; ">
 			<div class="box-body">
@@ -190,7 +210,7 @@
 	</div>
 
 	<div class="container">
-		<br><br><h1>Data Laporan</h1>
+	
 		<div class="row" style="margin-top: 20px; margin-left: -20px; margin-bottom: 30px;">
 			<div class="box-body">
 				

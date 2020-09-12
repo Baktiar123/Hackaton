@@ -8,6 +8,8 @@
 
 			$data['jumlah'] = $this->getData();
 
+			$data['news'] = $this->getData2();
+
 			$this->load->view('index', $data);
 		}
 
@@ -20,6 +22,17 @@
 	        // echo $output;
 	        $jumlah = json_decode($output);
 	        return $jumlah;
+	    }
+
+	    public function getData2(){
+	        $ch = curl_init();
+	        curl_setopt($ch, CURLOPT_URL, "https://dekontaminasi.com/api/id/covid19/hoaxes");
+	        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	        $output = curl_exec($ch);
+	        curl_close($ch);
+	        // echo $output;
+	        $news = json_decode($output);
+	        return $news;
 	    }
 
 		public function tambah_aksi(){
