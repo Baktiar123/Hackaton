@@ -141,11 +141,11 @@
 
 	<div class="container">
 	<br><br><h1>Lapor Sigap Covid 19<br></h1>
-		<div class="row" style="margin-top: 20px; margin-left: 2px; margin-bottom: 10px;">
+		<div class="row" style="margin-top: 20px; margin-left: 2px; ">
 			<div class="box-body">
 				<button type="button" class="btn btn-primary" data-toggle="modal" 
 				data-target="#staticBackdrop">
-					Launch static backdrop modal
+					Buat Laporan Sigap
 				</button>
 			</div>
 		</div>
@@ -189,17 +189,46 @@
 	 </div>
 	</div>
 
-	<?php foreach ($datalaporan as $dlp) : ?>
-        <tr>
-            <td><?php echo $dlp->nama ?></td>
-            <td><?php echo $dlp->email ?></td>
-            <td><?php echo $dlp->alamat ?></td>
-            <td><?php echo $dlp->pernyataan ?></td>
-        </tr>
-    <?php endforeach; ?>
-	<footer class="">
+	<div class="container">
+		<br><br><h1>Data Laporan</h1>
+		<div class="row" style="margin-top: 20px; margin-left: -20px; margin-bottom: 30px;">
+			<div class="box-body">
+				
+				<table class="table">
+				  
+				  
+				  <tbody>
+                 <?php foreach ($datalaporan as $dlp) : ?>
+			        <tr>
+			            <td><?php echo $dlp->nama ?></td>
+			            <td><?php echo $dlp->email ?></td>
+			            <td><?php echo $dlp->alamat ?></td>
+			            <td><?php echo $dlp->pernyataan ?></td>
+			        </tr>
+			    <?php endforeach; ?>
+                </tbody>
+				</table>
 
-	</footer>
+              
+                
+                
+              </table>
+           </div>
+		</div>
+	</div>
+<footer class="footer bg-light" style="width:100%; height:80px; padding-top: 8px;">
+	<div class="container text-center">
+		
+		<div class="row" style="margin-top: 20px; margin-left: -20px; margin-bottom: 30px;">
+			<div class="footer-copyright">
+		        <div class="container">
+		          © 2020 Copyright Website Created By.Baktiar Mahardika
+		          <a class="grey-text text-lighten-4 right" href="facebook.com"></a>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</footer>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
