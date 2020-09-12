@@ -1,5 +1,4 @@
 <?php
-	
 	class Page extends CI_Controller{
 
 		public function index(){
@@ -7,17 +6,24 @@
 			$data['datalaporan'] = $this->m_hackaton->tampil_data()->
 			result();
 
-			$readAPI = file_get_contents('https://coronavirus-19-api.herokuapp.com/all');
-			$data['indonesia'] = json_decode($readAPI, true);
-
-			// echo "<pre>";
-			// print_r($data);
+			$data['jumlah'] = $this->getData();
 
 			$this->load->view('index', $data);
 		}
 
-		public function tambah_aksi()
-		{
+		public function getData(){
+	        $ch = curl_init();
+	        curl_setopt($ch, CURLOPT_URL, "https://dekontaminasi.com/api/id/covid19/stats");
+	        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	        $output = curl_exec($ch);
+	        curl_close($ch);
+	        // echo $output;
+	        $jumlah = json_decode($output);
+	        return $jumlah;
+	    }
+
+		public function tambah_aksi(){
+
 			$nama		= $this->input->post('nama');
 			$email		= $this->input->post('email');
 			$alamat		= $this->input->post('alamat');	

@@ -24,10 +24,10 @@
 
 	<div class="jumbotron jumbotron-fluid ">
 	  <div class="container text-center">
-	    <h1 class="display-4">Corona Virus/Covid19</h1>
+	    <h1 class="display-4"><b>Corona Virus/Covid19</b></h1>
 	    <p class="lead">
-	    	<h2>Pantau penyebaran virus corona<br>Waspada Virus Corona 
-	    		<br>Stay clean and healty</h2></p>
+	    	<h3>Pantau penyebaran virus corona di Indonesia<br>Waspada Virus Corona 
+	    		<br>Stay clean and healty</h3></p>
 	  </div>
 	</div>
 
@@ -47,7 +47,7 @@
 					<div class="row">
 						<div class ="col-md-6">
 							<h5>Meninggal</h5>
-							<h2 id="data-kasus"> 1 </h2>
+							<h2 id="data-kasus"> <?= $death = $jumlah->numbers->fatal; ?> </h2>
 							<h5>orang</h5>
 						</div>
 
@@ -63,7 +63,7 @@
 					<div class="row">
 						<div class ="col-md-6">
 							<h5>Positif</h5>
-							<h2 id="data-kasus"> 1 </h2>
+							<h2 id="data-kasus"> <?= $positive = $jumlah->numbers->infected; ?> </h2>
 							<h5>orang</h5>
 						</div>
 
@@ -80,7 +80,7 @@
 					<div class="row">
 						<div class ="col-md-6">
 							<h5>Sembuh</h5>
-							<h2 id="data-kasus"> 1 <!-- <?php echo $value['cases']; ?> --> </h2> 
+							<h2 id="data-kasus"> <?= $Healty = $jumlah->numbers->recovered; ?> </h2> 
 							<h5>orang</h5>
 						</div>
 
@@ -111,42 +111,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                  
-                <tr>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
+                 <?php foreach ($jumlah->regions as $jml) : ?>
+	                <tr>
+	                  <td></td>
+	                  <td><?= $jml->name; ?></td>
+	                  <td><?= $jml->numbers->infected; ?></td>
+	                  <td><?= $jml->numbers->fatal; ?></td>
+	                  <td><?= $jml->numbers->recovered; ?></td>
+	                </tr>
+                 <?php endforeach; ?>
                 </tbody>
                 
               </table>
@@ -155,11 +128,14 @@
 	</div>
 	
 	<div class="jumbotron jumbotron-fluid ">
-	  <div class="container text-center">
+	  <div class="container ">
 	    <h1 class="display-4">Deteksi Dini Covid19</h1>
 	    <p class="lead">
-	    	<h2>Pantau penyebaran virus corona<br>Waspada Virus Corona 
-	    		<br>Stay clean and healty</h2></p>
+	    	<h2>Bila merasakan gejala berikut segera periksakan ke dokter</h2>  <h5>- Merasakan demam	<br>
+- Merasakan batuk / pilek	<br>
+- Merasa kesulitan bernafas atau sesak nafas<br>	
+- Mengalami nyeri tenggorokan	<br>
+- Lama penyakit kurang dari 14 hari</h5></p>
 	  </div>
 	</div>
 
